@@ -1,0 +1,14 @@
+<main>
+    <h1>Page de connexion</h1>
+    <form ngForm (submit)="onSubmit()" #assigmentForm>
+        <mat-form-field appearance="fill">
+            <mat-label>Username</mat-label>
+            <input matInput placeholder="Nom" [(ngModel)]="loginInput" name="nom">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Password</mat-label>
+            <input matInput placeholder="Password" [(ngModel)]="passwordInput" name="password" type="password">
+        </mat-form-field>
+        <button mat-stroked-button class="secondary">Login</button>
+    </form>
+</main>

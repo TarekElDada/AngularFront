@@ -1,0 +1,79 @@
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+}
+
+.date {
+    border: 1px solid var(--text-color);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.ajouterBtn {
+    align-self: flex-end;
+}
+
+.assignment {
+    height: 150px;
+}
+
+.assignment-card {
+    cursor: pointer;
+    padding: 10px;
+    background-color: var(--third-color);
+    border: 1px solid var(--text-color);
+    transition: 0.3s;
+
+    &.rendu {
+        border: 2px solid rgba(50, 255, 0, 0.0);
+        background-color: rgba(50, 255, 0, 0.2);
+
+        &:hover {
+            border-color: rgba(50, 255, 0, 0.5);
+            transition: 0.3s;
+        }
+    }
+
+    &.nonRendu {
+        border: 2px solid rgba(255, 0, 0, 0.0);
+        background-color: rgba(255, 0, 0, 0.2);
+        
+        &:hover {
+            border-color: rgba(255, 0, 0, 0.5);
+            transition: 0.3s;
+        }
+    }
+}
+
+mat-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 0;
+    margin: 0;
+}
+
+.mat-card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border: 1px solid var(--text-color);
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+mat-paginator {
+    background-color: var(--third-color);
+    color: white;
+    border-radius: 10px;
+}

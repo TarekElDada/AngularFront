@@ -1,0 +1,16 @@
+<main>
+    <form ngForm (submit)="onSubmit()" #assigmentForm>
+        <mat-form-field>
+            <input matInput [(ngModel)]="nomDevoir" name="nom">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Choisissez une date</mat-label>
+            <input matInput [matDatepicker]="picker" [(ngModel)]="selectedDate" (ngModelChange)="onDateChange($event)"
+                [ngModelOptions]="{standalone: true}">
+            <mat-hint>DD/MM/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <button mat-stroked-button class="secondary">Ajouter un devoir</button>
+    </form>
+</main>

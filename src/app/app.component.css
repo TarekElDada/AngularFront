@@ -1,0 +1,72 @@
+html,
+body {
+    margin: 10px;
+}
+
+/* Toolbar */
+mat-sidenav-container {
+    background-color: var(--primary-color);
+    min-height: calc(100vh - var(--toolbar-nav-height));
+}
+
+mat-sidenav-content {
+    height: 100%;
+}
+
+mat-sidenav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: var(--secondary-color);
+    color: white;
+    border-radius: 0 0 10px 0;
+
+    button {
+        width: 100%;
+        color: white;
+    }
+}
+
+.custom-toolbar {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.white {
+    color: white;
+}
+
+.toolbar-button {
+    background-color: var(--secondary-color);
+    color: var(--white);
+}
+
+mat-toolbar {
+    height: var(--toolbar-nav-height);
+}
+
+.mat-toolbar-row {
+    gap: 10px;
+}
+
+.toolbar-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.toolbar-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.mat-sidenav-content {
+    padding: 15px;
+}
+
+button {
+    border-radius: 5px;
+}

@@ -1,0 +1,16 @@
+#bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.actions-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+mat-card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}

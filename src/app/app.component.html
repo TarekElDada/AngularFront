@@ -1,0 +1,41 @@
+@if (authService.isLogged()){
+<main>
+    <mat-toolbar class="custom-toolbar">
+        <mat-toolbar-row color="primary">
+            <button mat-mini-fab class="primary" (click)="opened=!opened"><mat-icon>menu</mat-icon></button>
+            <nav class="toolbar-nav">
+                <div class="toolbar-buttons">
+                    <a routerLink="/home"><button mat-button class="primary"><mat-icon class="white">home</mat-icon>
+                            Home</button></a>
+                </div>
+                <a routerLink="/home" class="toolbar-title">{{title}}</a>
+                <a routerLink="/login">
+                    <button mat-button class="primary" (click)="logOut()"><mat-icon class="white">logout</mat-icon>
+                        Logout
+                    </button>
+                </a>
+            </nav>
+        </mat-toolbar-row>
+    </mat-toolbar>
+    <mat-sidenav-container>
+        <mat-sidenav [(opened)]="opened" mode="side">
+            <nav>
+                <a routerLink="/home">
+                    <button mat-button>Liste des devoirs</button>
+                </a>
+                <a routerLink="/add">
+                    <button mat-button>Ajout d'un devoir</button>
+                </a>
+                <button mat-button>Modification d'un devoir</button>
+                <button mat-button>Suppression d'un devoir</button>
+                <button mat-button (click)="peuplerBD()">Génération de données de test</button>
+            </nav>
+        </mat-sidenav>
+        <mat-sidenav-content>
+            <router-outlet></router-outlet>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+</main>
+} @else {
+<router-outlet></router-outlet>
+}

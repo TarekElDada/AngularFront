@@ -1,0 +1,44 @@
+<!-- @if (!formVisible){ -->
+<router-outlet></router-outlet>
+<main class="container">
+    <div class="ajouterBtn">
+        <a routerLink="/add">
+            <button class="ajouterBtn secondary" mat-flat-button color="accent" (click)="onAddAssignmentBtnClick()">
+                Ajouter un devoir
+            </button>
+        </a>
+    </div>
+    <mat-list>
+        @for (assignment of assignments; track assignment.nom){
+        <nav>
+            <a routerLink="/assignment/{{assignment.id}}">
+                <mat-card class="assignment-card" [ngClass]="{'rendu': assignment.rendu, 'nonRendu': !assignment.rendu}"
+                    (click)="assignmentClique(assignment)">
+                    <h4 mat-subheader class="date">{{assignment.dateDeRendu | date}}</h4>
+                    <mat-card-content>
+                        @if (assignment.rendu){
+                        <p appRendu>
+                            Le devoir {{assignment.nom}} a été rendu
+                        </p>
+                        } @else {
+                        <p appNonRendu>
+                            Le devoir {{assignment.nom}} doit être rendu
+                        </p>
+                        }
+                    </mat-card-content>
+                </mat-card>
+            </a>
+        </nav>
+        }
+    </mat-list>
+    <mat-paginator [length]="totalDocs"
+               [pageSize]="limit"
+               [pageSizeOptions]="[5, 10, 25, 100]"
+               (page)="onPageChange($event)"
+               aria-label="Select page">
+    </mat-paginator>
+    <!-- <app-assignment-detail [assignmentTransmis]="assignmentSelectionne"></app-assignment-detail> -->
+</main>
+<!-- } @else { -->
+<!-- <app-add-assignment (nouvelAssignment)="onNouvelAssignment($event)"></app-add-assignment> -->
+<!-- } -->
